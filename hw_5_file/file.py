@@ -38,7 +38,6 @@ with open('roles.txt', 'r', encoding='utf-8') as input:
             rep = i_line.strip()
             # если реплика не закончилась
             if output[current_role] and output[current_role][-1][:len(str(count_rep))] == str(count_rep):
-                print(output[current_role][-1])
                 output[current_role][-1] += f'    {rep}'
             # если строка началась с пробела, но до нее была строка вида role:''
             else:
