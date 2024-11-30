@@ -8,10 +8,8 @@ class USADate():
             if 1 <= month <= 12: self._month = month
             else: raise ValueError('Месяц не может быть меньше 1 или числом большим 12')
             if 1 <= day <= 31: 
-                if month in self._m_31 and day <= 31:
-                    self._day = day
-                elif month in self._m_30 and day <= 30:
-                    self._day = day
+                if month in self._m_31 and day <= 31: self._day = day
+                elif month in self._m_30 and day <= 30: self._day = day
                 else:
                     if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
                         if day <= 29: self._day = day

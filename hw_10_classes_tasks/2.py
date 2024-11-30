@@ -41,4 +41,4 @@ d.be_strict()
 s = Son()
 s.be_kind()
 for p in (f, m, d, s):
-    print(p.greet())
+    print(f'{p.__class__.__name__} greet: {p.greet()}, mood: {p._mood}')
