@@ -10,6 +10,7 @@ response = requests.get(f'https://api.nasa.gov/EPIC/api/enhanced/date/{date}?api
 img_id = ''
 json = response.json()
 
+
 if response.status_code == 200 and json:
     img_id = json[0]['image']
 else:
@@ -18,7 +19,7 @@ else:
 url = f'https://api.nasa.gov/EPIC/archive/enhanced/{date[0:4]}/{date[5:7]}/{date[8:]}/png/{img_id}.png?api_key={API_KEY}'
 
 response = requests.get(url)
-json = response.json()
+
 if response.status_code == 200 and json:
     print(f'Для просмотра фотографии перейдите по ссылке: {url}')
 else:
