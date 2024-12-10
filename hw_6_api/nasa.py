@@ -20,7 +20,7 @@ url = f'https://api.nasa.gov/EPIC/archive/enhanced/{date[0:4]}/{date[5:7]}/{date
 
 response = requests.get(url)
 
-if response.status_code == 200 and json:
+if response.status_code == 200:
     print(f'Для просмотра фотографии перейдите по ссылке: {url}')
 else:
     print('Не удалось скачать изображение')
